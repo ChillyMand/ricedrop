@@ -1,8 +1,8 @@
 # Design QA
 
 - Source visual truth: internal design exploration images (not included in the repository)
-- Implementation screenshot: internal QA artifact (not included in the repository)
-- Combined comparison: internal QA artifact (not included in the repository)
+- Implementation screenshot: [`design-qa-desktop.png`](design-qa-desktop.png)
+- Combined comparison: [`design-qa-comparison.jpg`](design-qa-comparison.jpg)
 - Viewports checked: desktop 1440 × 1024 CSS px; mobile 390 × 844 CSS px
 - Density normalization: desktop browser capture used a 2× viewport and was downsampled to 1440 × 1024 for comparison. Source images were proportionally fit without cropping in the comparison sheet.
 - State: home, create-pairing success, and responsive mobile home
@@ -36,7 +36,7 @@ final result: passed
 
 ## 2026-08-26 Logo、微信守卫与大文件更新
 
-- Source visual truth: the final RiceDrop logo supplied for the product header
+- Source visual truth: the final RiceDrop logo supplied for the product header; processed asset: [`output/logo-clean-transparent.png`](output/logo-clean-transparent.png)
 - Implementation state: mobile home at 390 × 844 CSS px
 - Logo: source image loads at 1254 × 1254 px and is cropped into a 34 × 34 px header tile without horizontal overflow.
 - WeChat guard: dedicated blocking state is present; environment behavior is covered by User-Agent tests because the controlled browser cannot change its User-Agent in-place.
