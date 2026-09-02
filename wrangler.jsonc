@@ -1,0 +1,13 @@
+{
+  "$schema":"./node_modules/wrangler/config-schema.json",
+  "name":"wzrice-lan-file-transfer",
+  "main":"src/index.js",
+  "compatibility_date":"2026-08-18",
+  "compatibility_flags":["nodejs_compat"],
+  "workers_dev":true,
+  "routes":[{"pattern":"f.wzrice.cn","custom_domain":true}],
+  "assets":{"directory":"public","binding":"ASSETS","run_worker_first":["/api/*","/en","/ja"]},
+  "durable_objects":{"bindings":[{"name":"DIRECTORY","class_name":"PairingDirectory"},{"name":"ROOMS","class_name":"TransferRoom"}]},
+  "migrations":[{"tag":"v1","new_sqlite_classes":["PairingDirectory","TransferRoom"]}],
+  "observability":{"enabled":true,"logs":{"head_sampling_rate":1}}
+}

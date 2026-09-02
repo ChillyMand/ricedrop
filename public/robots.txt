@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://f.wzrice.cn/sitemap.xml

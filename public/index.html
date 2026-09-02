@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#101112">
+  <meta name="description" content="糯米饭快传是一款无需上传云端的局域网文件传输工具，支持设备之间点对点快速互传文件。">
+  <meta name="keywords" content="局域网文件传输,局域网文件互传,点对点传文件,文件快传,无需上传云端">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="糯米饭快传 · 局域网文件互传">
+  <meta property="og:description" content="糯米饭快传是一款无需上传云端的局域网文件传输工具，支持设备之间点对点快速互传文件。">
+  <meta property="og:url" content="https://f.wzrice.cn/">
+  <meta property="og:site_name" content="糯米饭快传">
+  <meta property="og:locale" content="zh_CN">
+  <title>糯米饭快传 · 局域网文件互传</title>
+  <link rel="canonical" href="https://f.wzrice.cn/">
+  <link rel="alternate" hreflang="zh-CN" href="https://f.wzrice.cn/">
+  <link rel="alternate" hreflang="en" href="https://f.wzrice.cn/en/">
+  <link rel="alternate" hreflang="ja" href="https://f.wzrice.cn/ja/">
+  <link rel="alternate" hreflang="x-default" href="https://f.wzrice.cn/">
+  <link rel="icon" type="image/png" sizes="64x64" href="/favicon.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/ui.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://f.wzrice.cn/#website","name":"RiceDrop","alternateName":["糯米饭快传","RICE.Drop","RICEDROP","Rice Drop"],"url":"https://f.wzrice.cn/"},{"@type":"Organization","@id":"https://f.wzrice.cn/#organization","name":"RiceDrop","alternateName":"糯米饭快传","url":"https://f.wzrice.cn/","logo":"https://f.wzrice.cn/logo.png"},{"@type":"WebApplication","name":"糯米饭快传","url":"https://f.wzrice.cn/","description":"糯米饭快传是一款无需上传云端的局域网文件传输工具，支持设备之间点对点快速互传文件。","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","browserRequirements":"Requires a modern browser with WebRTC","isAccessibleForFree":true,"inLanguage":"zh-CN","publisher":{"@id":"https://f.wzrice.cn/#organization"}}]}</script>
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" defer></script>
+</head>
+<body data-locale="zh">
+  <main>
+    <header><a href="/" class="brand" aria-label="糯米饭快传"><span class="brand-logo"><img src="/logo.png" alt=""></span><b>糯米饭快传</b></a><span>局域网文件互传</span><nav class="language-nav" aria-label="语言"><a href="/" data-lang="zh" hreflang="zh-CN" aria-current="page">ZH</a><a href="/en/" data-lang="en" hreflang="en">EN</a><a href="/ja/" data-lang="ja" hreflang="ja">JA</a></nav></header>
+    <aside id="language-suggestion" class="language-suggestion" hidden><span>检测到浏览器使用其他语言。</span><a id="suggested-language" href="/en/">切换语言</a><button id="dismiss-language" type="button">继续使用中文</button></aside>
+    <section id="wechat-guard" hidden><p class="kicker">浏览器兼容性</p><h1 id="compat-title">请在系统浏览器中打开</h1><p id="compat-message">当前应用内浏览器无法可靠完成文件传输。请复制链接后，使用 Chrome 或 Edge 打开。</p><button id="copy-page-link" class="primary wide">复制链接</button><button id="continue-browser" class="secondary wide" hidden>仍要继续</button><small id="wechat-help">请从右上角菜单选择“在浏览器打开”，或复制链接后切换浏览器。</small></section>
+    <section id="home">
+      <p class="kicker">糯米饭快传 · 局域网文件互传</p><h1>传个文件。</h1><p class="intro">局域网内，设备之间直接传输。<br>不上传云端，不经过公网中转。</p>
+      <button id="create" class="primary wide">开始传输</button><div id="creating" class="pending-panel" role="status" hidden><span class="spinner"></span><b>正在创建，请稍候…</b></div>
+      <div class="divider"><span>或输入对方的配对码</span></div><form id="join" class="auto-code-form"><input id="code" name="pairing-code" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="3" placeholder="000" aria-label="三位配对码" aria-describedby="join-error" autocomplete="off" data-1p-ignore data-lpignore="true" data-bwignore><button type="submit" hidden>连接</button></form>
+      <p id="join-error" class="inline-error" role="status"></p><div id="joining" class="pending-panel" role="status" hidden><span class="spinner"></span><b>正在连接对方…</b><button id="cancel-join" type="button" class="secondary">取消并返回首页</button></div><p class="note">两台设备需连接同一局域网 · 文件内容不会上传至服务器</p>
+    </section>
+    <section id="session" hidden><div class="status"><i id="dot"></i><span id="status">准备中</span></div><button id="cancel-connect" class="secondary wide" hidden>取消并返回首页</button>
+      <div id="pair" hidden><small>把配对码告诉对方</small><strong id="pair-code">000</strong><p id="timer"></p><img id="pair-qr" alt="扫码加入配对"><p class="lan-warning">双方必须连接同一局域网</p><div class="pair-actions"><button id="copy">复制链接</button><button id="leave-wait" class="secondary">退出等待</button></div></div>
+      <div id="connection-actions" hidden><p id="connection-help"></p><div><button id="retry" class="primary">重新连接</button><button id="back-home" class="secondary">返回首页</button></div></div>
+      <div id="transfer" hidden><div id="peer-info" class="peer-info"><span>对方设备</span><strong id="peer-device">正在识别…</strong></div><div class="drop" id="drop"><h2>拖拽文件到这里</h2><p>或从设备中选择文件</p><input id="files" type="file" multiple><button id="choose" class="primary">选择文件</button></div><div id="offers"></div><div id="queue"></div><button id="disconnect" class="danger wide">断开连接</button></div><p id="error" class="error"></p>
+    </section>
+  </main>
+  <div id="turnstile-dialog" class="modal" role="dialog" aria-modal="true" aria-labelledby="turnstile-title" hidden><div class="modal-card"><p class="kicker">安全验证</p><h2 id="turnstile-title">请完成验证后继续</h2><p>检测到短时间内操作较频繁，验证完成后将自动继续刚才的操作。</p><div id="turnstile-widget"></div><p id="turnstile-error" class="inline-error" role="status"></p><button id="cancel-turnstile" class="secondary wide">取消</button></div></div>
+  <footer>© 2026 WZRICE.CN 版权所有</footer><script type="module" src="/app.js"></script>
+</body></html>

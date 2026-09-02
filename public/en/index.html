@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#101112">
+  <meta name="description" content="RiceDrop transfers files directly between devices on the same local network with peer-to-peer connections and no cloud upload.">
+  <meta name="keywords" content="LAN file transfer,peer-to-peer file transfer,local file sharing,direct file transfer,no cloud upload">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="RiceDrop · Fast LAN File Transfer">
+  <meta property="og:description" content="RiceDrop transfers files directly between devices on the same local network with peer-to-peer connections and no cloud upload.">
+  <meta property="og:url" content="https://f.wzrice.cn/en/">
+  <meta property="og:site_name" content="RiceDrop">
+  <meta property="og:locale" content="en_US">
+  <title>RiceDrop · Fast LAN File Transfer</title>
+  <link rel="canonical" href="https://f.wzrice.cn/en/">
+  <link rel="alternate" hreflang="zh-CN" href="https://f.wzrice.cn/">
+  <link rel="alternate" hreflang="en" href="https://f.wzrice.cn/en/">
+  <link rel="alternate" hreflang="ja" href="https://f.wzrice.cn/ja/">
+  <link rel="alternate" hreflang="x-default" href="https://f.wzrice.cn/">
+  <link rel="icon" type="image/png" sizes="64x64" href="/favicon.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/ui.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://f.wzrice.cn/#website","name":"RiceDrop","alternateName":["糯米饭快传","RICE.Drop","RICEDROP","Rice Drop"],"url":"https://f.wzrice.cn/"},{"@type":"Organization","@id":"https://f.wzrice.cn/#organization","name":"RiceDrop","alternateName":"糯米饭快传","url":"https://f.wzrice.cn/","logo":"https://f.wzrice.cn/logo.png"},{"@type":"WebApplication","name":"RiceDrop","url":"https://f.wzrice.cn/en/","description":"RiceDrop transfers files directly between devices on the same local network with peer-to-peer connections and no cloud upload.","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","browserRequirements":"Requires a modern browser with WebRTC","isAccessibleForFree":true,"inLanguage":"en","publisher":{"@id":"https://f.wzrice.cn/#organization"}}]}</script>
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" defer></script>
+</head>
+<body data-locale="en">
+  <main>
+    <header><a href="/en/" class="brand" aria-label="RiceDrop"><span class="brand-logo"><img src="/logo.png" alt=""></span><b>RiceDrop</b></a><span>LAN File Transfer</span><nav class="language-nav" aria-label="Language"><a href="/" data-lang="zh" hreflang="zh-CN">ZH</a><a href="/en/" data-lang="en" hreflang="en" aria-current="page">EN</a><a href="/ja/" data-lang="ja" hreflang="ja">JA</a></nav></header>
+    <aside id="language-suggestion" class="language-suggestion" hidden><span>Your browser uses another language.</span><a id="suggested-language" href="/en/">Switch language</a><button id="dismiss-language" type="button">Stay in English</button></aside>
+    <section id="wechat-guard" hidden><p class="kicker">Browser compatibility</p><h1 id="compat-title">Open in your system browser</h1><p id="compat-message">This in-app browser cannot transfer files reliably. Copy the link and open it in Chrome or Edge.</p><button id="copy-page-link" class="primary wide">Copy link</button><button id="continue-browser" class="secondary wide" hidden>Continue anyway</button><small id="wechat-help">Use the top-right menu to open this page in a browser, or copy the link and switch browsers.</small></section>
+    <section id="home">
+      <p class="kicker">RiceDrop · LAN File Transfer</p><h1>Send a file.</h1><p class="intro">Transfer directly between devices on your local network.<br>No cloud upload. No public relay.</p>
+      <button id="create" class="primary wide">Start Transfer</button><div id="creating" class="pending-panel" role="status" hidden><span class="spinner"></span><b>Creating a transfer…</b></div>
+      <div class="divider"><span>or enter the other device’s pairing code</span></div><form id="join" class="auto-code-form"><input id="code" name="pairing-code" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="3" placeholder="000" aria-label="Three-digit pairing code" aria-describedby="join-error" autocomplete="off" data-1p-ignore data-lpignore="true" data-bwignore><button type="submit" hidden>Connect</button></form>
+      <p id="join-error" class="inline-error" role="status"></p><div id="joining" class="pending-panel" role="status" hidden><span class="spinner"></span><b>Connecting to the other device…</b><button id="cancel-join" type="button" class="secondary">Cancel and return home</button></div><p class="note">Both devices must use the same local network · Files are never uploaded to the server</p>
+    </section>
+    <section id="session" hidden><div class="status"><i id="dot"></i><span id="status">Ready</span></div><button id="cancel-connect" class="secondary wide" hidden>Cancel and return home</button>
+      <div id="pair" hidden><small>Share this pairing code</small><strong id="pair-code">000</strong><p id="timer"></p><img id="pair-qr" alt="Scan to join this transfer"><p class="lan-warning">Both devices must be on the same local network</p><div class="pair-actions"><button id="copy">Copy link</button><button id="leave-wait" class="secondary">Stop waiting</button></div></div>
+      <div id="connection-actions" hidden><p id="connection-help"></p><div><button id="retry" class="primary">Reconnect</button><button id="back-home" class="secondary">Back home</button></div></div>
+      <div id="transfer" hidden><div id="peer-info" class="peer-info"><span>Other device</span><strong id="peer-device">Identifying…</strong></div><div class="drop" id="drop"><h2>Drop files here</h2><p>or choose files from your device</p><input id="files" type="file" multiple><button id="choose" class="primary">Choose files</button></div><div id="offers"></div><div id="queue"></div><button id="disconnect" class="danger wide">Disconnect</button></div><p id="error" class="error"></p>
+    </section>
+  </main>
+  <div id="turnstile-dialog" class="modal" role="dialog" aria-modal="true" aria-labelledby="turnstile-title" hidden><div class="modal-card"><p class="kicker">Security check</p><h2 id="turnstile-title">Complete verification to continue</h2><p>We detected frequent activity. Your previous action will continue automatically after verification.</p><div id="turnstile-widget"></div><p id="turnstile-error" class="inline-error" role="status"></p><button id="cancel-turnstile" class="secondary wide">Cancel</button></div></div>
+  <footer>© 2026 WZRICE.CN. ALL RIGHTS RESERVED.</footer><script type="module" src="/app.js"></script>
+</body></html>

@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#101112">
+  <meta name="description" content="RiceDropは、クラウドにアップロードせず、同じローカルネットワーク上の端末間でファイルを直接転送できるツールです。">
+  <meta name="keywords" content="LANファイル転送,P2Pファイル転送,ローカルファイル共有,直接ファイル転送,クラウド不要">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="RiceDrop · 高速LANファイル転送">
+  <meta property="og:description" content="RiceDropは、クラウドにアップロードせず、同じローカルネットワーク上の端末間でファイルを直接転送できるツールです。">
+  <meta property="og:url" content="https://f.wzrice.cn/ja/">
+  <meta property="og:site_name" content="RiceDrop">
+  <meta property="og:locale" content="ja_JP">
+  <title>RiceDrop · 高速LANファイル転送</title>
+  <link rel="canonical" href="https://f.wzrice.cn/ja/">
+  <link rel="alternate" hreflang="zh-CN" href="https://f.wzrice.cn/">
+  <link rel="alternate" hreflang="en" href="https://f.wzrice.cn/en/">
+  <link rel="alternate" hreflang="ja" href="https://f.wzrice.cn/ja/">
+  <link rel="alternate" hreflang="x-default" href="https://f.wzrice.cn/">
+  <link rel="icon" type="image/png" sizes="64x64" href="/favicon.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/ui.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://f.wzrice.cn/#website","name":"RiceDrop","alternateName":["糯米饭快传","RICE.Drop","RICEDROP","Rice Drop"],"url":"https://f.wzrice.cn/"},{"@type":"Organization","@id":"https://f.wzrice.cn/#organization","name":"RiceDrop","alternateName":"糯米饭快传","url":"https://f.wzrice.cn/","logo":"https://f.wzrice.cn/logo.png"},{"@type":"WebApplication","name":"RiceDrop","url":"https://f.wzrice.cn/ja/","description":"RiceDropは、クラウドにアップロードせず、同じローカルネットワーク上の端末間でファイルを直接転送できるツールです。","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","browserRequirements":"Requires a modern browser with WebRTC","isAccessibleForFree":true,"inLanguage":"ja","publisher":{"@id":"https://f.wzrice.cn/#organization"}}]}</script>
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" defer></script>
+</head>
+<body data-locale="ja">
+  <main>
+    <header><a href="/ja/" class="brand" aria-label="RiceDrop"><span class="brand-logo"><img src="/logo.png" alt=""></span><b>RiceDrop</b></a><span>LANファイル転送</span><nav class="language-nav" aria-label="言語"><a href="/" data-lang="zh" hreflang="zh-CN">ZH</a><a href="/en/" data-lang="en" hreflang="en">EN</a><a href="/ja/" data-lang="ja" hreflang="ja" aria-current="page">JA</a></nav></header>
+    <aside id="language-suggestion" class="language-suggestion" hidden><span>ブラウザーは別の言語を使用しています。</span><a id="suggested-language" href="/en/">言語を切り替える</a><button id="dismiss-language" type="button">日本語のまま続ける</button></aside>
+    <section id="wechat-guard" hidden><p class="kicker">ブラウザー互換性</p><h1 id="compat-title">システムブラウザーで開いてください</h1><p id="compat-message">アプリ内ブラウザーではファイルを確実に転送できません。リンクをコピーしてChromeまたはEdgeで開いてください。</p><button id="copy-page-link" class="primary wide">リンクをコピー</button><button id="continue-browser" class="secondary wide" hidden>このまま続ける</button><small id="wechat-help">右上のメニューからブラウザーで開くか、リンクをコピーしてブラウザーを切り替えてください。</small></section>
+    <section id="home">
+      <p class="kicker">RiceDrop · LANファイル転送</p><h1>ファイルを送ろう。</h1><p class="intro">ローカルネットワーク内の端末間で直接転送。<br>クラウドへのアップロードも、公開中継もありません。</p>
+      <button id="create" class="primary wide">転送を開始</button><div id="creating" class="pending-panel" role="status" hidden><span class="spinner"></span><b>転送を作成しています…</b></div>
+      <div class="divider"><span>または相手のペアリングコードを入力</span></div><form id="join" class="auto-code-form"><input id="code" name="pairing-code" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="3" placeholder="000" aria-label="3桁のペアリングコード" aria-describedby="join-error" autocomplete="off" data-1p-ignore data-lpignore="true" data-bwignore><button type="submit" hidden>接続</button></form>
+      <p id="join-error" class="inline-error" role="status"></p><div id="joining" class="pending-panel" role="status" hidden><span class="spinner"></span><b>相手の端末に接続しています…</b><button id="cancel-join" type="button" class="secondary">キャンセルしてホームへ戻る</button></div><p class="note">両方の端末を同じローカルネットワークに接続してください · ファイルはサーバーにアップロードされません</p>
+    </section>
+    <section id="session" hidden><div class="status"><i id="dot"></i><span id="status">準備中</span></div><button id="cancel-connect" class="secondary wide" hidden>キャンセルしてホームへ戻る</button>
+      <div id="pair" hidden><small>相手にペアリングコードを伝えてください</small><strong id="pair-code">000</strong><p id="timer"></p><img id="pair-qr" alt="スキャンして転送に参加"><p class="lan-warning">両方の端末を同じローカルネットワークに接続してください</p><div class="pair-actions"><button id="copy">リンクをコピー</button><button id="leave-wait" class="secondary">待機を終了</button></div></div>
+      <div id="connection-actions" hidden><p id="connection-help"></p><div><button id="retry" class="primary">再接続</button><button id="back-home" class="secondary">ホームへ戻る</button></div></div>
+      <div id="transfer" hidden><div id="peer-info" class="peer-info"><span>相手の端末</span><strong id="peer-device">確認中…</strong></div><div class="drop" id="drop"><h2>ここにファイルをドロップ</h2><p>または端末からファイルを選択</p><input id="files" type="file" multiple><button id="choose" class="primary">ファイルを選択</button></div><div id="offers"></div><div id="queue"></div><button id="disconnect" class="danger wide">接続を解除</button></div><p id="error" class="error"></p>
+    </section>
+  </main>
+  <div id="turnstile-dialog" class="modal" role="dialog" aria-modal="true" aria-labelledby="turnstile-title" hidden><div class="modal-card"><p class="kicker">セキュリティ確認</p><h2 id="turnstile-title">確認を完了してください</h2><p>短時間に複数の操作が検出されました。確認後、直前の操作を自動的に続行します。</p><div id="turnstile-widget"></div><p id="turnstile-error" class="inline-error" role="status"></p><button id="cancel-turnstile" class="secondary wide">キャンセル</button></div></div>
+  <footer>© 2026 WZRICE.CN. ALL RIGHTS RESERVED.</footer><script type="module" src="/app.js"></script>
+</body></html>
